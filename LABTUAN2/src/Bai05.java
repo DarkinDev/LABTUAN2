@@ -160,10 +160,36 @@ public class Bai05 {
         System.out.println("Thông tin Sản phẩm 1:");
         sanPham1.xuat();
 
-        System.out.println("\nNhập thông tin cho Sản phẩm 2:");
-        SanPham sanPham2 = new SanPham();
-        sanPham2.nhap();
-        System.out.println("\nThông tin Sản phẩm 2:");
-        sanPham2.xuat();
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+
+        do {
+            System.out.println("=== Menu ===");
+            System.out.println("1. Nhập thông tin sản phẩm");
+            System.out.println("2. Hiển thị thông tin sản phẩm");
+            System.out.println("0. Thoát");
+            System.out.print("Nhập lựa chọn của bạn: ");
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.println("\nNhập thông tin cho Sản phẩm:");
+                    SanPham sanPham = new SanPham();
+                    sanPham.nhap();
+                    System.out.println("\nThông tin Sản phẩm:");
+                    sanPham.xuat();
+                    break;
+                case 2:
+                    System.out.println("Chức năng này chưa được triển khai.");
+                    break;
+                case 0:
+                    System.out.println("Thoát chương trình.");
+                    break;
+                default:
+                    System.out.println("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
+            }
+        } while (choice != 0);
+
+        scanner.close();
     }
 }
